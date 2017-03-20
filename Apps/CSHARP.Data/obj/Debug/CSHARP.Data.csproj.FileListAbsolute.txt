@@ -29,3 +29,10 @@ C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\s
 C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.csprojResolveAssemblyReference.cache
 C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.dll
 C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.pdb
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.xml
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.pdb
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll.CodeAnalysisLog.xml
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll.lastcodeanalysissucceeded
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Text.pdb
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Text.xml

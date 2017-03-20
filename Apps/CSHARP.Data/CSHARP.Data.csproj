@@ -47,6 +47,10 @@
     <Reference Include="CSHARP.Diagnostics">
       <HintPath>..\..\..\..\Dependencies\Clinch\CSHARP.Diagnostics.dll</HintPath>
     </Reference>
+    <Reference Include="CSHARP.Text, Version=2.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSHARP.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
