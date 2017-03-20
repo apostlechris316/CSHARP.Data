@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSHARP.Data</name>
+    </assembly>
+    <members>
+        <member name="T:CSHARP.Data.DataSetHelper">
+            <summary>
+            DataSet Builder
+            </summary>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CreateTable(System.String,System.String,System.String,System.Char)">
+            <summary>
+            Attempts to create a table on a dataset
+            </summary>
+            <param name="dataSetXml">If not passed in one is created</param>
+            <param name="tableName">Name of table to create</param>
+            <param name="fields">Delimted List of field names to create</param>
+            <param name="delimiter">Delimiter</param>
+            <returns>Xml representation of dataset with additional table added</returns>
+            <remarks>NEW in 2.0.0.6</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CreateTable(System.Data.DataSet@,System.String,System.String,System.Char)">
+            <summary>
+            Attempts to create a table on a dataset
+            </summary>
+            <param name="dataSet">If not passed in one is created</param>
+            <param name="tableName">Name of table to create</param>
+            <param name="fields">Delimted List of field names to create</param>
+            <param name="delimiter">Delimiter</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CreateTable(System.Data.DataSet@,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Attempts to create a table on a dataset.  If it exists it will add fields that do not already exist.
+            </summary>
+            <param name="dataSet">If not passed in one is created</param>
+            <param name="tableName">Name of table to create</param>
+            <param name="fieldList">Array of field names to create</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CreateTable(System.Data.DataSet,System.String,System.String,System.Char)">
+            <summary>
+            Attempts to create a table on a dataset
+            </summary>
+            <param name="dataSet">If not passed in one is created</param>
+            <param name="tableName">Name of table to create</param>
+            <param name="fields">Delimted List of field names to create</param>
+            <param name="delimiter">Delimiter</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CreateTable(System.Data.DataSet,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Attempts to create a table on a dataset.  If it exists it will add fields that do not already exist.
+            </summary>
+            <param name="dataSet">If not passed in one is created</param>
+            <param name="tableName">Name of table to create</param>
+            <param name="fieldList">Array of field names to create</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertCsvStringToDataTable(System.String,System.String)">
+            <summary>
+            Converts a CSV String into a Data Table
+            </summary>
+            <param name="csvContent">String containing CSV Content</param>
+            <param name="tableName">Name of Table</param>
+            <returns>DataTable object</returns>
+            <remarks>V2.0.0.3 - Method Name changed to proper case</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertDataTableToCsv(System.Data.DataSet,System.String)">
+            <summary>
+            Takes a DataSet and Table Name and returns a CSV String
+            </summary>
+            <param name="dataSet">Dataset containing the table</param>
+            <param name="tableName">Name of the table</param>
+            <returns>csv representation of table</returns>
+            <remarks>NEW in v2.0.0.7
+            Taken from StackOverflow Article https://stackoverflow.com/questions/4959722/c-sharp-datatable-to-csv </remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertDataTableToCsv(System.Data.DataTable)">
+            <summary>
+            Takes a DataTable and returns a CSV String
+            </summary>
+            <param name="dataTable">DataTable object to convert to CSV</param>
+            <returns>csv representation of table</returns>
+            <remarks>NEW in v2.0.0.7
+            Taken from StackOverflow Article https://stackoverflow.com/questions/4959722/c-sharp-datatable-to-csv </remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertDataTableToXml(System.Data.DataTable)">
+            <summary>
+            Generates an xml based on a .net datatable object
+            </summary>
+            <param name="dataTable">DataTable object to convert to xml</param>
+            <returns>xml representation of data table</returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertDataSetToXml(System.Data.DataSet)">
+            <summary>
+            Genereates an xml based on a .net dataset object
+            </summary>
+            <param name="dataSet">DataSet object to convert to xml</param>
+            <returns>xml representation of dataset</returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertXmlFromUrlToDataSet(System.String,System.Boolean)">
+            <summary>
+            Gets XML From Url and uses it to create dataset
+            </summary>
+            <param name="url">Absolute Url to xml to convert to dataset</param>
+            <param name="enforceConstraints">If true, will respecet contraints in when converting</param>
+            <returns>.Net Dataset Object</returns>
+            <remarks>new in 2.0.0.3</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.ConvertXmlStringToDataSet(System.String,System.Boolean)">
+            <summary>
+            Generates a .net dataset object based on a supplied xml string
+            </summary>
+            <param name="xml">xml string to convert to dataset</param>
+            <param name="enforceConstraints">if true, enforces contraints when converting</param>
+            <returns>.Net Dataset Object</returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.InsertRow(System.Data.DataSet,System.String,System.Data.DataColumnCollection,System.Data.DataRow)">
+            <summary>
+            Inserts a datarow into a table in a dataset
+            </summary>
+            <param name="dataSet">DataSet object to insert row in</param>
+            <param name="tableName">Name of table to insert row in</param>
+            <param name="columns">Collection of columns</param>
+            <param name="sourceRow">Row to insert in the table</param>
+            <returns>True if row inserted successfully</returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.InsertRow(System.String,System.String,System.String,System.String,System.Char)">
+            <summary>
+            Inserts A Row Into A Table In A DataSet. 
+            NOTE: This version will create the dataset, table and fields if they do not exist.
+            </summary>
+            <param name="dataSetXml">Dataset to add table to</param>
+            <param name="tableName">table to add row to</param>
+            <param name="fields">delimited list of field names</param>
+            <param name="values">delimited list of field values</param>
+            <param name="delimiter">delimiter</param>
+            <returns>The xml with the new data row inserted</returns>
+            <remarks>NEW in 2.0.0.6</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.InsertRow(System.Data.DataSet,System.String,System.String,System.String,System.Char)">
+            <summary>
+            Inserts A Row Into A Table In A DataSet. 
+            NOTE: This version will create the dataset, table and fields if they do not exist.
+            </summary>
+            <param name="dataSet">Dataset to add table to</param>
+            <param name="tableName">table to add row to</param>
+            <param name="fields">delimited list of field names</param>
+            <param name="values">delimited list of field values</param>
+            <param name="delimiter">delimiter</param>
+            <returns>True if row inserted successfully</returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.InsertRow(System.Data.DataSet,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Inserts A Row Into A Table In A DataSet. 
+            NOTE: This version will create the dataset, table and fields if they do not exist.
+            </summary>
+            <param name="dataSet">Dataset to add table to</param>
+            <param name="tableName">table to add row to</param>
+            <param name="fieldList">list of field names</param>
+            <param name="valueList">list of field values</param>
+            <returns>True if row inserted successfully</returns>
+            <remarks>v2.0.0.5 supports passing field and values string lists</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.AddRowToTable(System.Data.DataTable,System.String,System.String,System.Char)">
+            <summary>
+            Adds a row to the table passed in
+            </summary>
+            <param name="dataTable">If not passed in one is created</param>
+            <param name="fields">Delimted List of field names to insert into the new row</param>
+            <param name="values">Delimited List of field values to insert into the new row</param>
+            <param name="delimiter">Delimiter</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.AddRowToTable(System.Data.DataTable,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Adds a row to the table passed in
+            </summary>
+            <param name="dataTable">If not passed in one is created</param>
+            <param name="fieldList">Array of field names to insert into the new row</param>
+            <param name="valueList">Array of field values to insert into the new row</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.AddRowToTableShortcutColumns(System.Data.DataTable,System.String,System.String,System.Char)">
+            <summary>
+            Adds a row to the table passed in
+            </summary>
+            <param name="dataTable">If not passed in one is created</param>
+            <param name="fields">Delimted List of field names to insert into the new row</param>
+            <param name="values">Delimited List of field values to insert into the new row</param>
+            <param name="delimiter">Delimiter</param>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.AddRowToTableShortcutColumns(System.Data.DataTable,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Adds a row to the table but ignore extra columns in fieldList
+            </summary>
+            <param name="dataTable">If not passed in one is created</param>
+            <param name="fieldList">Array of field names to insert into the new row</param>
+            <param name="valueList">Array of field values to insert into the new row</param>
+            <returns></returns>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.DataRowToString(System.Data.DataRow)">
+            <summary>
+            Returns a string representation for the row in the format name=value~name=value
+            </summary>
+            <param name="row">DataRow to convert to string</param>
+            <returns>string in teh format name=value~name=value</returns>
+            <remarks> (NEW in 2.0.0.1)</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.DataTableColumnToDelimitedString(System.String,System.String,System.Boolean,System.String,System.Char,CSHARP.Diagnostics.IEventLog)">
+            <summary>
+            Returns a delimited string of the column values for all rows in a table
+            </summary>
+            <param name="xml"></param>
+            <param name="tableName"></param>
+            <param name="enforceConstraints"></param>
+            <param name="columnName"></param>
+            <param name="token"></param>
+            <param name="eventLog"></param>
+            <returns>Delimited string containing all rows in DataTable</returns>
+            <remarks>(NEW in 2.0.0.4)</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.DataTableColumnToDelimitedString(System.Data.DataTable,System.String,System.Char,CSHARP.Diagnostics.IEventLog)">
+            <summary>
+            Returns a delimited string of the column values for all rows in a table
+            </summary>
+            <param name="dataTable">DataTbale object</param>
+            <param name="columnName">column to convert</param>
+            <param name="token">token to use as delimiter between rows</param>
+            <param name="eventLog"></param>
+            <returns>Delimited string representation of data table</returns>
+            <remarks>(NEW in 2.0.0.4)</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.CopyTable(System.Data.DataSet,System.String,System.Data.DataSet,System.String,System.Boolean)">
+            <summary>
+            Copies the contents of a table in a dataset to another table in another dataset. If table exists and overwrite is true will delete all records and copy the new ones.
+            Otherwise will append rows.
+            </summary>
+            <param name="sourceDataSet"></param>
+            <param name="sourceTableName"></param>
+            <param name="destinationDataSet"></param>
+            <param name="destinationTableName"></param>
+            <param name="overwrite"></param>
+            <returns>True if table was copied</returns>
+            <remarks>New in 2.0.0.3</remarks>
+        </member>
+        <member name="M:CSHARP.Data.DataSetHelper.DataRowColumnValueByNameEqual(System.Data.DataRow,System.Data.DataRow,System.String)">
+            <summary>
+            Returns true if the value for a column is equal in both rows supplied.
+            (NEW in 2.0.0.2)
+            </summary>
+            <param name="firstRow">DataRow to compare</param>
+            <param name="secondRow">Another DataRow to compare</param>
+            <param name="columnName">name of column to compare</param>
+            <returns>true if the value for a column is equal in both rows supplied</returns>
+        </member>
+    </members>
+</doc>

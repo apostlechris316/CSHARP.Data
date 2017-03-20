@@ -1,0 +1,31 @@
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.csprojResolveAssemblyReference.cache
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.xml
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.pdb
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll.CodeAnalysisLog.xml
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Data.dll.lastcodeanalysissucceeded
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Diagnostics.dll
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Text.dll
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.IO.dll
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Text.pdb
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Text.xml
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Diagnostics.pdb
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.Diagnostics.xml
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.IO.pdb
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\bin\Debug\CSHARP.IO.xml
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.dll
+C:\_rwc\QuickStarts\CSHARP\Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.pdb
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Data.xml
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Data.dll
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Data.pdb
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Data.dll.CodeAnalysisLog.xml
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Data.dll.lastcodeanalysissucceeded
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Text.dll
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Text.pdb
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\bin\Debug\CSHARP.Text.xml
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\obj\Debug\CSHARP.Data.dll
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\obj\Debug\CSHARP.Data.pdb
+C:\Users\chris\Google Drive\_CTW_Business\ReadWatchCreate\products\QuickStarts\source\CSHARP\CSHARP.Data\obj\Debug\CSHARP.Data.csprojResolveAssemblyReference.cache
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.csprojResolveAssemblyReference.cache
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.dll
+C:\_rwc\_git\CSHARP.Data\Apps\CSHARP.Data\obj\Debug\CSHARP.Data.pdb

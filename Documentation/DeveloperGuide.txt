@@ -1,0 +1,22 @@
+# CSHARP.Data
+This project provides examples and starting points for various ways to manipulate data. 
+These libraries are meant to provide starting points for you and do not necessarily represent final production code.
+
+LICENSE: Free to use provided details on fixes and/or extensions emailed to chris.williams@readwatchcreate.com
+
+References:
+
+	* This library only references standard .NET 4.5 framework dlls.
+
+Libraries: 
+
+* This project contains 1 C# projects:
+
+	1) CSHARP.DATA 
+		- This project contains helper classes when working with files, text files and binary files. 
+
+Version History:
+
+	v1.0.0.9 - This is the initial release of the library. Prior versions are pre-release.
+
+
