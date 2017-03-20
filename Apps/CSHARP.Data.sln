@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.Stand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data", "CSHARP.Data\CSHARP.Data.csproj", "{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.Management", "CSHARP.SQLServer.Management\CSHARP.Data.SqlServer.Management.csproj", "{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
