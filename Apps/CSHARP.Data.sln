@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data", "CSHARP.Data.csproj", "{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.Standard", "CSHARP.Data.SQLServer.Standard\CSHARP.Data.SqlServer.Standard.csproj", "{F911D71C-7BA1-4735-AE67-97DB3FC612A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data", "CSHARP.Data\CSHARP.Data.csproj", "{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F911D71C-7BA1-4735-AE67-97DB3FC612A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F911D71C-7BA1-4735-AE67-97DB3FC612A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F911D71C-7BA1-4735-AE67-97DB3FC612A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F911D71C-7BA1-4735-AE67-97DB3FC612A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}.Release|Any CPU.ActiveCfg = Release|Any CPU
