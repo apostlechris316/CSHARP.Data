@@ -7,7 +7,7 @@
  *          chris.williams@readwatchcreate.com
  ********************************************************************************/
 
- using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace CSHARP.Data.SQL.Standard
 {
