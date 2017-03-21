@@ -7,9 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.Stand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data", "CSHARP.Data\CSHARP.Data.csproj", "{9EA143E5-F2E1-42C9-B7B6-7EDCD3DCB791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SQL.MSPractices", "CSHARP.Data.SqlServer.MSPractices\CSHARP.Data.SQL.MSPractices.csproj", "{DB3EA192-C529-4756-B62A-55744F85203D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.MSPractices", "CSHARP.Data.SqlServer.MSPractices\CSHARP.Data.SqlServer.MSPractices.csproj", "{DB3EA192-C529-4756-B62A-55744F85203D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.SqlServer.Management", "CSHARP.Data.SqlServer.Management\CSHARP.Data.SqlServer.Management.csproj", "{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.Xml.Atom", "CSHARP.Data.Xml.Atom\CSHARP.Data.Xml.Atom.csproj", "{36458C83-DA36-41FA-BE85-F994EC3805D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.Xml.Rss", "CSHARP.Data.Xml.Rss\CSHARP.Data.Xml.Rss.csproj", "{9529469D-B26B-459B-9906-0A113F782393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHARP.Data.Xml.Xslt", "CSHARP.Data.Xml.Xslt\CSHARP.Data.Xml.Xslt.csproj", "{6FAD4ABC-C262-4A0B-837E-F41D633F1C03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6BF3166-9FF4-4AC3-B728-B46D9513BC5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36458C83-DA36-41FA-BE85-F994EC3805D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36458C83-DA36-41FA-BE85-F994EC3805D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36458C83-DA36-41FA-BE85-F994EC3805D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36458C83-DA36-41FA-BE85-F994EC3805D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9529469D-B26B-459B-9906-0A113F782393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9529469D-B26B-459B-9906-0A113F782393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9529469D-B26B-459B-9906-0A113F782393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9529469D-B26B-459B-9906-0A113F782393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FAD4ABC-C262-4A0B-837E-F41D633F1C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAD4ABC-C262-4A0B-837E-F41D633F1C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAD4ABC-C262-4A0B-837E-F41D633F1C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAD4ABC-C262-4A0B-837E-F41D633F1C03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,7 +16,7 @@ using System.Text;
 
 using Microsoft.Practices.EnterpriseLibrary.Data;
 
-namespace CSHARP.Data.SQL.MSPractices
+namespace CSHARP.Data.SqlServer.MSPractices
 {
     /// <summary>
     /// Utility class to assist when working with Micrsooft Practices Library to access Sql Server

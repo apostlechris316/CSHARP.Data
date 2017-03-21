@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CSHARP.Data.SqlServer.MSPractices")]
-[assembly: AssemblyDescription("Wraps the Microsoft Practices DLL to call stored procedures.")]
+[assembly: AssemblyTitle("CSHARP.Data.Xml.Atom")]
+[assembly: AssemblyDescription("Classes to help you manipuate Atom Data")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Read Watch Create")]
 [assembly: AssemblyProduct("CSHARP.Data")]
-[assembly: AssemblyCopyright("Copyright ©2015-2017 Read Watch Create")]
+[assembly: AssemblyCopyright("Copyright ©2015-17 Read Watch Create")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7cbda149-4194-4316-8cbc-6bada1adefd6")]
+[assembly: Guid("8171d0f8-4f95-4e21-8e6d-c58442b6c637")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
