@@ -24,7 +24,7 @@ namespace CSHARP.Data.Json
         /// <param name="json">String containing valid JSON</param>
         /// <param name="deserializeRootElementName"></param>
         /// <param name="eventLog"></param>
-        /// <returns></returns>
+        /// <returns>string containing xml</returns>
         public static string JsonToXml(string json, string deserializeRootElementName, IEventLog eventLog)
         {
             string returnValue;
@@ -49,7 +49,7 @@ namespace CSHARP.Data.Json
         /// </summary>
         /// <param name="xml">String containing valid XML</param>
         /// <param name="eventLog"></param>
-        /// <returns></returns>
+        /// <returns>string containing JSON</returns>
         public static string XmlToJson(string xml, IEventLog eventLog)
         {
             // To convert an XML node contained in string xml into a JSON string   

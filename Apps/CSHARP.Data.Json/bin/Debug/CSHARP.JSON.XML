@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSHARP.JSON</name>
+    </assembly>
+    <members>
+        <member name="T:CSHARP.Data.Json.JsonHelper">
+            <summary>
+            Helps serialze to JSON and Deserialize to XML
+            V1.0.0.1 - Namspace and class name changed to proper case
+            </summary>
+        </member>
+        <member name="M:CSHARP.Data.Json.JsonHelper.JsonToXml(System.String,System.String,CSHARP.Diagnostics.IEventLog)">
+            <summary>
+            Converts a JSON string to XML
+            </summary>
+            <param name="json">String containing valid JSON</param>
+            <param name="deserializeRootElementName"></param>
+            <param name="eventLog"></param>
+            <returns>string containing xml</returns>
+        </member>
+        <member name="M:CSHARP.Data.Json.JsonHelper.XmlToJson(System.String,CSHARP.Diagnostics.IEventLog)">
+            <summary>
+            Converts an XML string to JSON
+            </summary>
+            <param name="xml">String containing valid XML</param>
+            <param name="eventLog"></param>
+            <returns>string containing JSON</returns>
+        </member>
+    </members>
+</doc>
