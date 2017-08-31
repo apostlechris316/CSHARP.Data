@@ -9,6 +9,9 @@
 using System.Xml;
 using Newtonsoft.Json;
 using CSHARP.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace CSHARP.Data.Json
 {
@@ -18,6 +21,46 @@ namespace CSHARP.Data.Json
     /// </summary>
     public static class JsonHelper
     {
+        /// <summary>
+        /// Sserialize object to a JSON stream.  
+        /// </summary>
+        /// <param name="objectToSerialize"></param>
+        /// <param name="objectType"></param>
+        /// <param name="eventLog"></param>
+        /// <returns></returns>
+        /// <remarks>NEW in v1.0.0.2<br/>
+        /// Adapted from https://msdn.microsoft.com/en-us/library/bb412179(v=vs.110).aspx </remarks>
+        public static string SerializeJsonObject(object objectToSerialize, System.Type objectType, IEventLog eventLog)
+        {
+            //Create a stream to serialize the object to.  
+            MemoryStream ms = new MemoryStream();
+
+            // Serializer the User object to the stream.  
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(objectType);
+            ser.WriteObject(ms, objectToSerialize);
+            byte[] json = ms.ToArray();
+            ms.Close();
+            return Encoding.UTF8.GetString(json, 0, json.Length);
+        }
+
+        /// <summary>
+        /// Deserialize a JSON COntent to anobject.  
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="objectType"></param>
+        /// <param name="eventLog"></param>
+        /// <returns></returns>
+        /// <remarks>NEW in v1.0.0.2<br/>
+        /// Adapted from https://msdn.microsoft.com/en-us/library/bb412179(v=vs.110).aspx </remarks>
+        public static object DeserializeJsonObject(string json, System.Type objectType, IEventLog eventLog)
+        {
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(objectType);
+            object deserializedUser = ser.ReadObject(ms);
+            ms.Close();
+            return deserializedUser;
+        }
+
         /// <summary>
         /// Converts a JSON string to XML
         /// </summary>
