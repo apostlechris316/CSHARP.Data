@@ -131,39 +131,48 @@ namespace CSHARP.Data.SQL.Standard
                         // TO DO: Handle parameters here
                         for (var parameterIndex = 0; parameterIndex < parameterNames.Count; parameterIndex++)
                         {
-                            DbType dbType = DbType.String;
-                            switch (parameterTypes[parameterIndex].ToUpperInvariant())
+                            try
                             {
-                                case "GUID":
-                                    dbType = DbType.Guid;
-                                    break;
-                                case "BOOLEAN":
-                                    dbType = DbType.Boolean;
-                                    break;
+                                DbType dbType = DbType.String;
+                                switch (parameterTypes[parameterIndex].ToUpperInvariant())
+                                {
+                                    case "GUID":
+                                        dbType = DbType.Guid;
+                                        break;
+                                    case "BOOLEAN":
+                                        dbType = DbType.Boolean;
+                                        break;
 
-                                case "DATETIME":
-                                    dbType = DbType.DateTime;
-                                    break;
+                                    case "DATETIME":
+                                        dbType = DbType.DateTime;
+                                        break;
 
-                                //                              SqlDbType.BigInt;
-                                //                              SqlDbType.Binary;
-                                //                              SqlDbType.Char
-                                //                              SqlDbType.Decimal 
-                                //                              SqlDbType.Float
-                                //                              SqlDbType.Int;
-                                case "STRING":
-                                    dbType = DbType.String;
-                                    break;
+                                    //                              SqlDbType.BigInt;
+                                    //                              SqlDbType.Binary;
+                                    //                              SqlDbType.Char
+                                    //                              SqlDbType.Decimal 
+                                    //                              SqlDbType.Float
+                                    //                              SqlDbType.Int;
+                                    case "STRING":
+                                        dbType = DbType.String;
+                                        break;
+                                }
+
+                                // FIX: v1.0.0.4 - If empty string then ignore parameter.
+                                if (string.IsNullOrEmpty(parameterValues[parameterIndex])) continue;
+
+                                var parameter = new SqlParameter(parameterNames[parameterIndex],
+                                    parameterValues[parameterIndex])
+                                { DbType = dbType };
+                                // TO DO: Direction
+                                command.Parameters.Add(parameter);
                             }
-
-                            // FIX: v1.0.0.4 - If empty string then ignore parameter.
-                            if (string.IsNullOrEmpty(parameterValues[parameterIndex])) continue;
-
-                            var parameter = new SqlParameter(parameterNames[parameterIndex],
-                                parameterValues[parameterIndex])
-                            { DbType = dbType };
-                            // TO DO: Direction
-                            command.Parameters.Add(parameter);
+                            catch(Exception exception)
+                            {
+                                // Log some more details to help debug
+                                if (eventLog != null) eventLog.LogEvent(0, "ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString: " + parameterIndex + " - " + parameterNames);
+                                throw new Exception("ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString: " + parameterIndex + " - " + parameterNames, exception);
+                            }
                         }
                     }
 

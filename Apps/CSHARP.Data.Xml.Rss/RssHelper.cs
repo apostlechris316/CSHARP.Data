@@ -13,6 +13,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 
@@ -27,10 +28,12 @@ namespace CSHARP.Data.Xml.Rss
         /// <summary>
         /// Returns .net dataset friendly xml based on an rss feed
         /// </summary>
-        /// <param name="rssXmlData"></param>
-        /// <param name="eventLog"></param>
+        /// <param name="rssXmlData">Raw RSS data from feed</param>
+        /// <param name="eventLog">Object that will receive log messages</param>
         /// <returns></returns>
-        /// <remarks>Adapted from this forum post: http://social.msdn.microsoft.com/Forums/eu/xmlandnetfx/thread/2aad018f-7af1-41c3-bfa1-8691eed0eb38 </remarks>
+        /// <remarks>Adapted from this forum post: http://social.msdn.microsoft.com/Forums/eu/xmlandnetfx/thread/2aad018f-7af1-41c3-bfa1-8691eed0eb38 
+        /// v1.0.0.1 FIXED: Ampersands now getting encoded via regex for attributes and text blocks. 
+        /// </remarks>
         public static String RssToXml(string rssXmlData, IEventLog eventLog)
         {
             using (var stringReader = new StringReader(rssXmlData))
@@ -44,16 +47,30 @@ namespace CSHARP.Data.Xml.Rss
                     {
                         var sName = reader.Name.Replace(":", "_");
                         var isClosed = reader.IsEmptyElement;
+                        string encodeValue = string.Empty;
                         switch (reader.NodeType)
                         {
                             case XmlNodeType.Element:
+
                                 builder.Append("<" + sName);
                                 if (reader.HasAttributes)
                                 {
                                     while (reader.MoveToNextAttribute())
                                     {
+                                        // if reader value has ampersand and not encoded then encode it
+                                        encodeValue = Regex.Replace(reader.Value, @"
+                                        # Match & that is not part of an HTML entity.
+                                        &                  # Match literal &.
+                                        (?!                # But only if it is NOT...
+                                          \w+;             # an alphanumeric entity,
+                                        | \#[0-9]+;        # or a decimal entity,
+                                        | \#x[0-9A-F]+;    # or a hexadecimal entity.
+                                        )                  # End negative lookahead.",
+                                            "&amp;",
+                                            RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+
                                         sName = reader.Name.Replace(":", "_");
-                                        builder.Append(" " + sName + "=\"" + reader.Value + "\"");
+                                        builder.Append(" " + sName + "=\"" + encodeValue + "\"");
                                     }
                                 }
                                 if (isClosed)
@@ -61,7 +78,27 @@ namespace CSHARP.Data.Xml.Rss
                                 builder.Append(">");
                                 break;
                             case XmlNodeType.Text:
-                                builder.Append(HttpUtility.HtmlEncode(reader.Value));
+
+                                // Check if encoded string contains & and if so correctly encodes it.
+                                encodeValue = reader.Value;
+                                if (HttpUtility.HtmlEncode(encodeValue).IndexOf("&") > -1)
+                                {
+                                    encodeValue = Regex.Replace(encodeValue, @"
+                                        # Match & that is not part of an HTML entity.
+                                        &                  # Match literal &.
+                                        (?!                # But only if it is NOT...
+                                          \w+;             # an alphanumeric entity,
+                                        | \#[0-9]+;        # or a decimal entity,
+                                        | \#x[0-9A-F]+;    # or a hexadecimal entity.
+                                        )                  # End negative lookahead.",
+                                        "&amp;",
+                                        RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+
+                                    encodeValue = HttpUtility.HtmlEncode(encodeValue);
+                                }
+
+                                builder.Append(encodeValue);
+
                                 break;
                             case XmlNodeType.EndElement:
                                 builder.Append("</" + sName + ">");
@@ -77,19 +114,20 @@ namespace CSHARP.Data.Xml.Rss
                     var sXmlResult = builder.ToString();
 
                     var dataSet = new DataSet();
-                    using (var oStringReader = new StringReader(sXmlResult))
+                    var oStringReader = new StringReader(sXmlResult);
+                    try
                     {
-                        try
-                        {
-                            dataSet.ReadXml(oStringReader, XmlReadMode.Auto);
-                        }
-                        catch (Exception exception)
-                        {
-                            if (eventLog != null) eventLog.LogEvent(0, "RssHelper.RssToXml - ERROR: " + exception.ToString());
-                        }
-
-                        oStringReader.Close();
+                        dataSet.ReadXml(oStringReader, XmlReadMode.Auto);
                     }
+                    catch (Exception exception)
+                    {
+                        if (eventLog != null) eventLog.LogEvent(0, "RssHelper.RssToXml - ERROR: " + exception.ToString());
+                    }
+
+                    // Make sure reader is closed and memory disposed.
+                    oStringReader.Close();
+                    oStringReader.Dispose();
+                    oStringReader = null;
 
                     return dataSet.Tables.Count == 0 ? null : dataSet.GetXml();
                 }
