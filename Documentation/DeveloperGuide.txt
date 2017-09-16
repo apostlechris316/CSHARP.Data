@@ -1,0 +1,53 @@
+# CSHARP.Data
+
+
+This project provides examples and starting points for various ways to manipulate data. 
+
+These libraries are meant to provide starting points for you and do not necessarily represent final production code.
+
+
+
+LICENSE: Free to use provided details on fixes and/or extensions emailed to chris.williams@readwatchcreate.com
+
+References:
+
+	
+
+* This library only references standard .NET 4.5 framework dlls.
+
+Libraries: 
+
+
+
+* This project contains 9 C# projects:
+
+	
+	
+	Name: 			CSHARP.Data 
+
+	Description: 		This project contains helper classes when working with .NET DataSets. 
+
+	
+	Name: 			CSHARP.Data.Common
+	Description:		This project contains common data object classes such as custom fields, external ids, etc
+
+	Name:			CSHARP.Data.Json
+	Description:		This project contains helper classes when working with JSON text.
+
+	Name:			CSHARP.Data.Json.FileSystem
+	Description:		This project contains helper classes to assist in reading and writing JSON items from the file system.
+	
+	Name: 			CSHARP.Data.SqlServer.Management
+	Description:		This project contains helper classes to assist in managing a SQL Server Instance
+
+	Name: 			CSHARP.Data.SqlServer.MSPractices
+	Description:		This project contains helper classes to assist in working with Microsoft Practices Library to work with SQL Server.
+
+	Name:			CSHARP.Data.SqlServer.Standard
+	Description:		This project contains helper classes to assist in working with SQL Server using Standard .NET
+
+	Name: 			CSHARP.Data.Xml.Atom
+	Description:		This project contains helper classes to assist with manipulating ATOM feeds
+
+	Name: 			CSHARP.Data.Xml.Rss
+	Descripition:		This project contains helper classes to assist with manipulating RSS feeds.
