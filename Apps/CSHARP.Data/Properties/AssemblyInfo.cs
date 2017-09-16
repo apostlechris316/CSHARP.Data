@@ -10,11 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Read Watch Create")]
 [assembly: AssemblyProduct("CSHARP QuickStarts")]
-<<<<<<< HEAD
-[assembly: AssemblyCopyright("Copyright ©2007 - 2015 Read Watch Create")]
-=======
 [assembly: AssemblyCopyright("Copyright ©2007 - 2017 Read Watch Create")]
->>>>>>> master
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

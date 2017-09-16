@@ -36,19 +36,11 @@ namespace CSHARP.Data
         /// <param name="delimiter">Delimiter</param>
         /// <returns>Xml representation of dataset with additional table added</returns>
         /// <remarks>NEW in 2.0.0.6</remarks>
-<<<<<<< HEAD
-	    public static string CreateTable    (string dataSetXml, string tableName, string fields, char delimiter)
-=======
 	    public static string CreateTable(string dataSetXml, string tableName, string fields, char delimiter)
->>>>>>> master
         {
             var dataSet = (string.IsNullOrEmpty(dataSetXml)) ? new DataSet() : ConvertXmlStringToDataSet(dataSetXml, false);
             CreateTable(ref dataSet, tableName, fields, delimiter);
             return ConvertDataSetToXml(dataSet);
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         }
 
         /// <summary>
@@ -94,10 +86,7 @@ namespace CSHARP.Data
             fieldList.AddRange(fields.Split(delimiter));
             CreateTable(dataSet, tableName, fieldList);
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> master
         /// <summary>
         /// Attempts to create a table on a dataset.  If it exists it will add fields that do not already exist.
         /// </summary>
