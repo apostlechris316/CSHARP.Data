@@ -6,12 +6,14 @@
  ********************************************************************************/
 
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace CSHARP.Data.Common
 {
     /// <summary>
     /// Data Transfer Object for a custom field
     /// </summary>
+    [DataContract]
     public class CustomField
     {
         /// <summary>

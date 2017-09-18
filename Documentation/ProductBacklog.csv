@@ -1,0 +1,7 @@
+Date Completed,Version,Library,Feature,Task
+9/17/2017,v1.0.0.6,CSHARP.Data.SQL.Standard,Ad-Hoc Query,Add ReadDataTableFromSqlServerViaQuery to allow ad-hoc query
+,V1.0.0.2,CSHARP.Data.SQL.Standard,Best Practice Naming,Classname case Changed
+,v1.0.0.3,CSHARP.Data.SQL.Standard,Connection String Support (rather than requiring name),Add ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString to support passing in connection string
+,v1.0.0.4,CSHARP.Data.SQL.Standard,Empty Guid Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If empty string in parameter value of type guid we automatically pass Guid.Empty."
+,v1.0.0.5,CSHARP.Data.SQL.Standard,Null ParameterNames Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If parameterNames is null then assume call to procedure with no parameters."
+,v1.0.0.1,CSHARP.Data.SQL.Standard,Parameter support,ReadDataTableFromSqlServerViaStoredProcedure now supports parameters

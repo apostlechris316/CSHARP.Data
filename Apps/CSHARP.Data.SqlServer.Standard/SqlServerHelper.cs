@@ -23,22 +23,73 @@ namespace CSHARP.Data.SQL.Standard
     /// </summary>
     public static class SqlServerHelper
     {
+        #region ReadDataTableFromSqlServerViaQuery - WARNING: In Production be aware of SQL Injection 
+
         /// <summary>
         /// Reads data into a .NET DataTable based on the results of a SQL Server Stored Procedure
         /// </summary>
         /// <param name="connectionStringName">Name of Connection String entry in Web.Config</param>
-        /// <param name="storedProcedureName">Name of stored procedure to execute</param>
+        /// <param name="query">SQL Query</param>
         /// <param name="eventLog">StringBuilder used to store any log messages</param>
         /// <returns></returns>
-        public static DataTable ReadDataTableFromSqlServerViaStoredProcedure(string connectionStringName,
-            string storedProcedureName, IEventLog eventLog)
-        {
+        /// <remarks>WARNING: In production environment be aware of possible SQL Injection<br/>
+        /// NEW in v1.0.0.6</remarks>
+        public static DataTable ReadDataTableFromSqlServerViaQuery(string connectionStringName,
+            string query, IEventLog eventLog)
+        { 
             var settings = ConfigurationManager.ConnectionStrings[connectionStringName];
 
             if (settings == null)
                 throw new Exception(string.Format("Error Connecting to Source Database: {0}", connectionStringName));
 
-            return ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString(settings.ConnectionString, storedProcedureName, eventLog);
+            DataTable results = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(settings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, conn))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                dataAdapter.Fill(results);
+
+            return results;
+        }
+
+        #endregion
+
+        #region ReadDataTableFromSqlServerViaStoredProcedure 
+
+        /// <summary>
+        /// Reads data into a .NET DataTable based on the results of a SQL Server Stored Procedure
+        /// </summary>
+        /// <param name="connectionStringName">Name of connection string in config file</param>
+        /// <param name="storedProcedureName">Name of stored procedure to execute</param>
+        /// <param name="eventLog">StringBuilder used to store any log messages</param>
+        /// <returns></returns>
+        /// <remarks>NEW in 1.0.0.3</remarks>
+        public static DataTable ReadDataTableFromSqlServerViaStoredProcedure(string connectionStringName,
+            string storedProcedureName, IEventLog eventLog)
+        {
+            var settings = ConfigurationManager.ConnectionStrings[connectionStringName];
+
+
+            if (settings == null)
+                throw new Exception(string.Format("Error Connecting to Source Database: {0}", connectionStringName));
+
+            var results = new DataTable();
+
+            using (var conn = new SqlConnection(settings.ConnectionString))
+            {
+                using (var command = new SqlCommand(storedProcedureName, conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    conn.Open();
+                    var reader = command.ExecuteReader();
+                    results.Load(reader);
+                    conn.Close();
+                }
+            }
+
+            return results;
         }
 
         /// <summary>
@@ -184,5 +235,7 @@ namespace CSHARP.Data.SQL.Standard
 
             return results;
         }
+
+        #endregion
     }
 }
