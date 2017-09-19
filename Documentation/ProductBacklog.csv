@@ -1,7 +1,28 @@
 Date Completed,Version,Library,Feature,Task
-9/17/2017,v1.0.0.6,CSHARP.Data.SQL.Standard,Ad-Hoc Query,Add ReadDataTableFromSqlServerViaQuery to allow ad-hoc query
-,V1.0.0.2,CSHARP.Data.SQL.Standard,Best Practice Naming,Classname case Changed
-,v1.0.0.3,CSHARP.Data.SQL.Standard,Connection String Support (rather than requiring name),Add ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString to support passing in connection string
-,v1.0.0.4,CSHARP.Data.SQL.Standard,Empty Guid Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If empty string in parameter value of type guid we automatically pass Guid.Empty."
-,v1.0.0.5,CSHARP.Data.SQL.Standard,Null ParameterNames Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If parameterNames is null then assume call to procedure with no parameters."
-,v1.0.0.1,CSHARP.Data.SQL.Standard,Parameter support,ReadDataTableFromSqlServerViaStoredProcedure now supports parameters
+9/17/2017,v1.0.0.6,CSHARP.Data.SQLServer.Standard,Ad-Hoc Query,Add ReadDataTableFromSqlServerViaQuery to allow ad-hoc query
+,V1.0.0.2,CSHARP.Data.SQLServer.Standard,Best Practice Naming,Classname case Changed
+,v1.0.0.3,CSHARP.Data.SQLServer.Standard,Connection String Support (rather than requiring name),Add ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString to support passing in connection string
+,v1.0.0.4,CSHARP.Data.SQLServer.Standard,Empty Guid Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If empty string in parameter value of type guid we automatically pass Guid.Empty."
+,v1.0.0.5,CSHARP.Data.SQLServer.Standard,Null ParameterNames Support,"In ReadDataTableFromSqlServerViaStoredProcedureAndRawConnectionString, If parameterNames is null then assume call to procedure with no parameters."
+,v1.0.0.1,CSHARP.Data.SQLServer.Standard,Parameter support,ReadDataTableFromSqlServerViaStoredProcedure now supports parameters
+,v2.0.0.7,CSHARP.Data,ConvertDataTableToCsv,Added ConvertDataTableToCsv taken from Stackoverflow
+,2.0.0.6,CSHARP.Data,Create Table supports passing in dataset as xml,
+,2.0.0.3,CSHARP.Data,ConvertCsvStringToDataTable changed to proper case,
+,2.0.0.3,CSHARP.Data,ConvertXmlFromUrlToDataSet,Added ConvertXmlFromUrlToDataSet
+,2.0.0.6,CSHARP.Data,InsertRow now supports passing dataset as xml,
+,2.0.0.5,CSHARP.Data,InsertRow version where you pass DataSet now supports passing field and values string lists,
+,2.0.0.1,CSHARP.Data,DataRowToString,Added DataRowToString
+,2.0.0.4,CSHARP.Data,DataTableColumnToDelimitedString,Added DataTableColumnToDelimitedString so you could specify the delimiter and choose to pass in xml or DataTable object
+,2.0.0.3,CSHARP.Data,CopyTable,Added CopyTable to allow you to copy a table from one DataSet to another'
+,1.0.0.0,CSHARP.Data.Common,Initial version contains common data clases such as CustomFields,
+,1.0.0.0,CSHARP.Data.Json,Initial version supports JSON to XML and XML to JSON,
+,1.0.0.2,CSHARP.Data.Json,SerializeJsonObject,Provided serialization of an object to  JSON String
+,1.0.0.1,CSHARP.Data.Json,Namspace and class name changed to proper case,
+,1.0.0.2,CSHARP.Data.Json,DeserializeJsonObject,Provided deserialization of a JSON String to an object
+,1.0.0.1,CSHARP.Data.Json.FileSystem,,
+,1.0.0.0,CSHARP.Data.SQLServer.Management,Initial Version,
+,1.0.0.0,CSHARP.Data.SQLServer.MSPractices,Initial Version ,Relies on MS Practices Dlls. Often better to use CSHARP.Data.SQLServer.Standard unless you need specific functionality.
+,1.0.0.1,CSHARP.Data.Xml.Atom,Initial Version,V1.0.0.0 was actually a combined library of CSHARP.Xml. Split to provide better segmenting.
+,1.0.0.0,CSHARP.Data.Xml.Rss,Initial Version,
+,1.0.0.1,CSHARP.Data.Xml.Rss,RSSToXml issue with Ampersands in attributes and text blocks,FIXED: Ampersands now getting encoded via regex for attributes and text blocks.
+,1.0.0.0,CSHARP.Data.Xml.Xslt,Initial Version,

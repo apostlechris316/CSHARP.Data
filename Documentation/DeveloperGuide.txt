@@ -1,76 +1,31 @@
 # CSHARP.Data
-<<<<<<< HEAD
 This project provides examples and starting points for various ways to manipulate data. 
 These libraries are meant to provide starting points for you and do not necessarily represent final production code.
 
-=======
-
-
-This project provides examples and starting points for various ways to manipulate data. 
-
-These libraries are meant to provide starting points for you and do not necessarily represent final production code.
-
-
-
->>>>>>> master
 LICENSE: Free to use provided details on fixes and/or extensions emailed to chris.williams@readwatchcreate.com
 
 References:
 
-<<<<<<< HEAD
 	* This library only references standard .NET 4.5 framework dlls.
 
 Libraries: 
 
-* This project contains 1 C# projects:
-
-	1) CSHARP.DATA 
-		- This project contains helper classes when working with files, text files and binary files. 
-
-Version History:
-
-	v1.0.0.9 - This is the initial release of the library. Prior versions are pre-release.
-
-
-=======
+	* This project contains 9 C# projects:
 	
-
-* This library only references standard .NET 4.5 framework dlls.
-
-Libraries: 
-
-
-
-* This project contains 9 C# projects:
-
+	CSHARP.Data: This project contains helper classes when working with .NET DataSets. 
 	
+	CSHARP.Data.Common: This project contains common data object classes such as custom fields, external ids, etc
 	
-	Name: 			CSHARP.Data 
-
-	Description: 		This project contains helper classes when working with .NET DataSets. 
-
+	CSHARP.Data.Json: This project contains helper classes when working with JSON text.
 	
-	Name: 			CSHARP.Data.Common
-	Description:		This project contains common data object classes such as custom fields, external ids, etc
-
-	Name:			CSHARP.Data.Json
-	Description:		This project contains helper classes when working with JSON text.
-
-	Name:			CSHARP.Data.Json.FileSystem
-	Description:		This project contains helper classes to assist in reading and writing JSON items from the file system.
+	CSHARP.Data.Json.FileSystem: This project contains helper classes to assist in reading and writing JSON items from the file system.	
 	
-	Name: 			CSHARP.Data.SqlServer.Management
-	Description:		This project contains helper classes to assist in managing a SQL Server Instance
+	CSHARP.Data.SqlServer.Management: This project contains helper classes to assist in managing a SQL Server Instance
 
-	Name: 			CSHARP.Data.SqlServer.MSPractices
-	Description:		This project contains helper classes to assist in working with Microsoft Practices Library to work with SQL Server.
+	CSHARP.Data.SqlServer.MSPractices: This project contains helper classes to assist in working with Microsoft Practices Library to work with SQL Server.
 
-	Name:			CSHARP.Data.SqlServer.Standard
-	Description:		This project contains helper classes to assist in working with SQL Server using Standard .NET
+	CSHARP.Data.SqlServer.Standard: This project contains helper classes to assist in working with SQL Server using Standard .NET
 
-	Name: 			CSHARP.Data.Xml.Atom
-	Description:		This project contains helper classes to assist with manipulating ATOM feeds
+	CSHARP.Data.Xml.Atom: This project contains helper classes to assist with manipulating ATOM feeds
 
-	Name: 			CSHARP.Data.Xml.Rss
-	Descripition:		This project contains helper classes to assist with manipulating RSS feeds.
->>>>>>> master
+	CSHARP.Data.Xml.Rss: This project contains helper classes to assist with manipulating RSS feeds.
