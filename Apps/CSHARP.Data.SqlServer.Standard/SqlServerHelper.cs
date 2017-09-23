@@ -23,10 +23,36 @@ namespace CSHARP.Data.SQL.Standard
     /// </summary>
     public static class SqlServerHelper
     {
+        /// <summary>
+        /// Gets the current version of SQL Server
+        /// </summary>
+        /// <param name="connectionStringName"></param>
+        /// <param name="eventLog"></param>
+        /// <returns></returns>
+        /// <remarks>NEW in v1.0.0.7</remarks>
+        public static string GetSqlServerVersion(string connectionStringName, IEventLog eventLog)
+        {
+            var versionTable = ReadDataTableFromSqlServerViaQuery(connectionStringName, "SELECT @@version", eventLog);
+            return (versionTable != null ? versionTable.Rows.Count > 0 ? versionTable.Rows[0][0].ToString() : string.Empty : string.Empty);
+        }
+
+        /// <summary>
+        /// Gets the current version of SQL Server
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="eventLog"></param>
+        /// <returns></returns>
+        /// <remarks>NEW in v1.0.0.7</remarks>
+        public static string GetSqlServerVersionUsingRawConnectionString(string connectionString, IEventLog eventLog)
+        {
+            var versionTable = ReadDataTableFromSqlServerViaQueryWithRawConnectionString(connectionString, "SELECT @@version", eventLog);
+            return (versionTable != null ? versionTable.Rows.Count > 0 ? versionTable.Rows[0][0].ToString() : string.Empty : string.Empty);
+        }
+
         #region ReadDataTableFromSqlServerViaQuery - WARNING: In Production be aware of SQL Injection 
 
         /// <summary>
-        /// Reads data into a .NET DataTable based on the results of a SQL Server Stored Procedure
+        /// Reads data into a .NET DataTable based on the results of an ad hoc query
         /// </summary>
         /// <param name="connectionStringName">Name of Connection String entry in Web.Config</param>
         /// <param name="query">SQL Query</param>
@@ -36,15 +62,28 @@ namespace CSHARP.Data.SQL.Standard
         /// NEW in v1.0.0.6</remarks>
         public static DataTable ReadDataTableFromSqlServerViaQuery(string connectionStringName,
             string query, IEventLog eventLog)
-        { 
+        {
             var settings = ConfigurationManager.ConnectionStrings[connectionStringName];
 
             if (settings == null)
                 throw new Exception(string.Format("Error Connecting to Source Database: {0}", connectionStringName));
 
+            return ReadDataTableFromSqlServerViaQueryWithRawConnectionString(settings.ConnectionString, query, eventLog);
+        }
+
+        /// <summary>
+        /// Reads data into a .NET DataTable based on the results of an ad-hoc query using a raw connection string
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="query"></param>
+        /// <param name="eventLog"></param>
+        /// <returns></returns>
+        public static DataTable ReadDataTableFromSqlServerViaQueryWithRawConnectionString(string connectionString,
+            string query, IEventLog eventLog)
+        { 
             DataTable results = new DataTable();
 
-            using (SqlConnection conn = new SqlConnection(settings.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, conn))
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
                 dataAdapter.Fill(results);
